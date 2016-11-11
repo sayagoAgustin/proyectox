@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Carga de Stock</title>
+    </h:head>
+    <h:body>
+        <h1>Modificacion del Stock</h1>
+        <h:form>
+            <p:messages/>
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Precio de Compra" for="stPreComp"/>
+                <p:inputText label="Precio de compra es un campo requerido" value="#{altaStock.sotckProdSelect.precomprast}" id="stPreComp" required="true" placeholder="100.20"/>
+                
+                <p:outputLabel value="Precio de Venta " for="stPreVent"/>
+                <p:inputText label="precio de compra es un campo requerido" value="#{altaStock.sotckProdSelect.preventast}" id="stPreVent" required="true" placeholder="20.90"/>
+                
+                <p:outputLabel value="Descuento Actual " for="stDesAc"/>
+                <p:inputText label="cantidad es un campo requerido" value="#{altaStock.sotckProdSelect.descuetost}" id="stDesAc" />
+                
+                <p:outputLabel value="Descuento "/>
+                <p:selectOneMenu value="#{altaStock.porcentaje}" >
+                    <f:selectItem itemValue="0" itemLabel="0%"/>
+                    <f:selectItem itemValue="10" itemLabel="10%"/>
+                    <f:selectItem itemValue="15" itemLabel="15%"/>
+                    <f:selectItem itemValue="20" itemLabel="20%"/>
+                    <f:selectItem itemValue="25" itemLabel="25%"/>
+                    <f:selectItem itemValue="30" itemLabel="30%"/>
+                    <f:selectItem itemValue="35" itemLabel="35%"/>
+                    <f:selectItem itemValue="40" itemLabel="40%"/>
+                    <f:selectItem itemValue="45" itemLabel="45%"/>
+                    <f:selectItem itemValue="50" itemLabel="50%"/>
+                </p:selectOneMenu>
+                
+                <p:outputLabel value="Cantidad " for="stCant"/>
+                <p:inputText label="cantidad es un campo requerido" value="#{altaStock.sotckProdSelect.cantst}" id="stCant" required="true" placeholder="10"/>
+                
+                <p:outputLabel value="Cantidad para Reposicón " for="stCantRep"/>
+                <p:inputText label="cantidad de reposición es un campo requerido" value="#{altaStock.sotckProdSelect.cantMinst}" id="stCantRep" required="true" placeholder="3"/>
+               
+                <h:commandButton value="Cargar" action="#{altaStock.modificarStok()}" />
+                
+            </h:panelGrid>
+            
+
+        </h:form>
+    </h:body>
+</html>
+

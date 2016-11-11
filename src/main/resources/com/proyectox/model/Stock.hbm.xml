@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/11/2016 20:03:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.proyectox.model.Stock" table="stock" catalog="proyectox" optimistic-lock="version">
+        <id name="idstock" type="java.lang.Integer">
+            <column name="idstock" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="producto" class="com.proyectox.model.Producto" fetch="select">
+            <column name="idprod" />
+        </many-to-one>
+        <many-to-one name="tienda" class="com.proyectox.model.Tienda" fetch="select">
+            <column name="idtiendast" />
+        </many-to-one>
+        <property name="preventast" type="java.lang.Long">
+            <column name="preventast" precision="10" scale="0" />
+        </property>
+        <property name="precomprast" type="java.lang.Long">
+            <column name="precomprast" precision="10" scale="0" />
+        </property>
+        <property name="cantst" type="java.lang.Integer">
+            <column name="cantst" />
+        </property>
+        <property name="descuetost" type="java.lang.Float">
+            <column name="descuetost" precision="12" scale="0" />
+        </property>
+        <property name="estadost" type="java.lang.Integer">
+            <column name="estadost" />
+        </property>
+        <property name="cantMinst" type="java.lang.Integer">
+            <column name="cantMinst" />
+        </property>
+        <property name="idcatStk" type="java.lang.Integer">
+            <column name="idcatStk" />
+        </property>
+    </class>
+</hibernate-mapping>

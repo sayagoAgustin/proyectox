@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+       
+        
+        <title>Carga de Historial</title>
+    </h:head>
+    <h:body>
+        <h1>Carga de Historial</h1>
+
+
+        
+        <h:form id="form">
+            <h:panelGrid columns="2">
+
+                <p:outputLabel value="Categoría"/>
+                <p:selectOneMenu id="cate" value="#{indexProducto.categoria.idcat}" required="true">
+                    <f:selectItem itemLabel="- Seleccione -" itemValue=""/>
+                    <f:selectItems value="#{indexProducto.lisCategorias}"/>
+                    <f:ajax execute="cate" render="cSeleccionado"/>
+                </p:selectOneMenu>
+
+
+                <p:outputLabel value="Código de Barra " for="codProd"/>
+                <p:inputText value="#{indexProducto.producto.codbarprod}" id="codProd" type="number"/>
+
+                <p:outputLabel value="Descripción " for="desProd"/>
+                <p:inputText value="#{indexProducto.producto.desprod}" id="desProd" required="true"/>
+
+                <h:commandButton value="Buscar" action="#{altaProducto.buscar(indexProducto.producto)}" id="btBuscar" onclick="#{indexProducto.completar()}" />
+                
+
+            </h:panelGrid>
+
+            <p:messages/>
+        </h:form>
+                
+        <h:form id="dialog" rendered="#{altaProducto.opciones}">
+            <p:dataTable value="#{altaProducto.prodConsultado}" var="p" rows="5"  >
+                <p:column headerText="Codigo de Barra">
+                    <h:outputText value="#{p.codbarprod}" />
+                </p:column>
+
+                <p:column headerText="Descripción">
+                    <h:outputText value="#{p.desprod}" />
+                </p:column>
+
+                <p:column headerText="Categoría">
+                    <h:outputText value="#{p.categoria.descat}" />
+                </p:column>
+
+                <p:column> 
+                    <p:commandButton id="selectButton" update=":dialog:detalle" oncomplete="PF('Dialogo').show()" icon="ui-icon-search" title="Detalle" value="Ver stock">  
+                        <f:setPropertyActionListener value="#{p}" target="#{altaStock.prodSelect}" />  
+                    </p:commandButton>   
+                </p:column>
+            </p:dataTable> 
+            
+            
+            <p:dialog header="Stock del Producto" id="Dialogo" widgetVar="Dialogo" modal="true" showEffect="fade" hideEffect="fade" resizable="false" closeOnEscape="false" draggable="false" closable="true">
+                <p:panelGrid  id="detalle" columns="2">
+                    <h:outputText value="Precio de compra:" />
+                    <h:outputText value="#{altaStock.sotckProdSelect.precomprast}" />
+
+                    <h:outputText value="Precio de venta:" />
+                    <h:outputText value="#{altaStock.sotckProdSelect.preventast}" />
+
+                    <h:outputText value="Descuento:" />
+                    <h:outputText value="#{altaStock.sotckProdSelect.descuetost}" />
+
+                    <h:outputText value="Cantidad Actual:" />
+                    <h:outputText value="#{altaStock.sotckProdSelect.cantst}" />
+
+                    <h:outputText value="Cantidad para reposicion" />
+                    <h:outputText value="#{altaStock.sotckProdSelect.cantMinst}" />
+                    
+                    <h:commandButton value="Modificar" action="modStock.xhtml" id="btModificarSt" />
+                    <h:commandButton value="Eliminar"  id="btEliminarSt" />
+                </p:panelGrid>
+            </p:dialog>
+        </h:form>
+        
+        
+        
+        
+        
+        <h:form id="carga" rendered="#{altaProducto.carga}">
+            <h:commandButton value="Cargar" action="#{altaProducto.cargar(indexProducto.producto)}" id="btCargar"/>
+        </h:form>
+    </h:body>
+</html>
+

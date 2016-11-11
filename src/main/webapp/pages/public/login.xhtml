@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"  
+                xmlns:h="http://java.sun.com/jsf/html"  
+                xmlns:f="http://java.sun.com/jsf/core"  
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="./../../templates/default/main.xhtml">
+    <ui:define name="content">                        
+        <h1 class="page-header "> <i class="fa fa-tachometer"></i> Login</h1>
+
+        <h:form id="formLogin" prependId="false"
+                onsubmit="document.getElementById('formLogin').action = 'j_security_check';">
+            <h:panelGrid columns="2">
+
+                <f:facet name="header">
+                </f:facet>
+
+                <h:outputLabel for="j_username" value="Username: "/>
+                <p:inputText id="j_username" required="true" class="form-control" placeholder="Usuario"/>
+
+                <h:outputLabel for="j_password" value="Password: "/>
+                <p:password id="j_password" required="true" placeholder="Password" />
+
+                <f:facet name="footer">
+                    <h:commandButton value="Login" type="submit" class="btn btn-default btn-lg"/>
+                </f:facet>
+            </h:panelGrid>
+        </h:form>
+
+    </ui:define>
+</ui:composition>  

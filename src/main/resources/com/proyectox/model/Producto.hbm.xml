@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/11/2016 20:03:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.proyectox.model.Producto" table="producto" catalog="proyectox" optimistic-lock="version">
+        <id name="idprod" type="java.lang.Integer">
+            <column name="idprod" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categoria" class="com.proyectox.model.Categoria" fetch="select">
+            <column name="idcatprod" />
+        </many-to-one>
+        <property name="desprod" type="string">
+            <column name="desprod" length="45" not-null="true" />
+        </property>
+        <property name="codbarprod" type="string">
+            <column name="codbarprod" length="45" />
+        </property>
+        <set name="stocks" table="stock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idprod" />
+            </key>
+            <one-to-many class="com.proyectox.model.Stock" />
+        </set>
+    </class>
+</hibernate-mapping>
