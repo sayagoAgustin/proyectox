@@ -4,9 +4,14 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!-- 
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/proyectox</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
+    -->
+    <property name="hibernate.connection.url">jdbc:mysql://127.6.164.2:3306/proyectox</property>
+    <property name="hibernate.connection.username">admin6t7glMh</property>
+    <property name="hibernate.connection.password">7vDcEQQVM_2z</property>
     <mapping resource="com/proyectox/model/Roles.hbm.xml"/>
     <mapping resource="com/proyectox/model/Users.hbm.xml"/>
     <mapping resource="com/proyectox/model/Categoria.hbm.xml"/>
