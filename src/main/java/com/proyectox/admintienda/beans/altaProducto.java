@@ -65,22 +65,6 @@ public class altaProducto implements Serializable{
         this.prodConsultado = prodConsultado;
     }
 
-
-    
-    
-
-    
-
-
-    
-
-
-
-
-
-    
-    
-    
     
     
     public void buscar(Producto consultado){

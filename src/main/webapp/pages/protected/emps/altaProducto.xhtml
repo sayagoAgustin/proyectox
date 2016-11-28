@@ -13,19 +13,19 @@
 
             <h:panelGrid columns="2">
                 <p:outputLabel value="Categoría"/>
-                <p:selectOneMenu id="cate" value="#{altaProducto.categoria.idcat}" required="true">
+                <p:selectOneMenu id="cate" value="#" required="true">
                     <f:selectItem itemLabel="- Seleccione -" itemValue=""/>
-                    <f:selectItems value="#{altaProducto.lisCategorias}"/>
+                    <f:selectItems var="categoria" value="#{listarCategorias.categorias}" itemLabel="#{categoria.descat}"/>
                     <f:ajax execute="cate" render="cSeleccionado"/>
                 </p:selectOneMenu>
                 
                 <p:outputLabel value="Código de Barra " for="codProd"/>
-                <p:inputText value="#{altaProducto.producto.codbarprod}" id="codProd"/>
+                <p:inputText value="#" id="codProd"/>
 
                 <p:outputLabel value="Descripción " for="desProd"/>
-                <p:inputText value="#{altaProducto.producto.desprod}" id="desProd" required="true"/>
+                <p:inputText value="#" id="desProd" required="true"/>
                 
-                <h:commandButton value="Cargar" action="#{altaProducto.buscar()}" id="bt"/>
+                <h:commandButton value="Cargar" action="#" id="bt"/>
                 
             </h:panelGrid>
             <p:messages/>

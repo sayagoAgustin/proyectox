@@ -1,5 +1,5 @@
 package com.proyectox.model;
-// Generated 11/11/2016 20:03:18 by Hibernate Tools 4.3.1
+// Generated 17/11/2016 16:39:45 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

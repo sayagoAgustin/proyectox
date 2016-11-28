@@ -54,7 +54,7 @@ public class indexProducto implements Serializable {
     }
 
         public List<SelectItem> getLisCategorias() {
-        altaCategoriaProd dao = new altaCategoriaProd();
+        altaCategoriaProdBean dao = new altaCategoriaProdBean();
         this.lisCategorias = new ArrayList<>();
         List<Categoria> c = dao.listaCategorias();
         lisCategorias.clear();
@@ -75,7 +75,7 @@ public class indexProducto implements Serializable {
         //como en el select menu solo tengo el id de la categoria, 
         //se la busca para recuperar la entidad completa y seteo 
         //en el producto
-        altaCategoriaProd daoC= new altaCategoriaProd();
+        altaCategoriaProdBean daoC= new altaCategoriaProdBean();
         Categoria c= daoC.buscarCategoria(this.categoria.getIdcat());
         this.producto.setCategoria(c);
     }

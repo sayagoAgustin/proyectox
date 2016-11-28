@@ -16,13 +16,8 @@
 
                 <p:outputLabel value="email" for="emailtienda"/>
                 <p:inputText value="#{altaTienda.tienda.emailtienda}" id="emailtienda"/>
-
-                <p:outputLabel value="Nombre de Tienda" for="nomtienda"/>
-                <p:inputText value="#{altaTienda.tienda.nomtienda}" id="nomtienda" />
-
-                <h:inputHidden value="#{altaTienda.tienda.setAdmintien(request.userPrincipal.name)}"/>
-
-                <h:commandButton action="#{altaTienda.insertarTienda()}" value="Guardar"/>
+     
+                <h:commandButton action="#{altaTienda.insertarTienda}" value="Guardar"/>
                         <h:commandButton action="index" value="Cancelar" immediate="true"/> 
 
             </h:panelGrid>

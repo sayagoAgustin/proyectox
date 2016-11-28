@@ -15,16 +15,19 @@ import org.hibernate.Transaction;
  * @author Notebook Sayago
  */
 public class TiendaDAO {
-    private Session session = HibernateUtil.getSessionFactory().openSession();
+    private Session session;
     
     public void insertarTienda(Tienda tienda) {
+        session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
         try {
             session.save(tienda);
             tx.commit();
+            session.close();
         } catch (Exception e) {
             System.out.println("Error en insertar " + e.getMessage());
             tx.rollback();
+            session.close();
         }
     }
     

@@ -46,5 +46,19 @@ public class productoDAO {
         }
     }
     
+     public List<Producto> listar(){
+        List<Producto> consul=null;
+        
+        try {
+            String Hql= "FROM Producto";
+            Query query = session.createQuery(Hql);
+            consul= query.list();
+            
+        } catch (Exception e) {
+            throw e;
+        }finally{
+            return consul;
+        }
+    }
     
 }

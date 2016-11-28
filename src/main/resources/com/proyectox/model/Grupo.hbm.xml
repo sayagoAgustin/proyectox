@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11/11/2016 20:03:20 by Hibernate Tools 4.3.1 -->
+<!-- Generated 17/11/2016 16:39:46 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.proyectox.model.Grupo" table="grupo" catalog="proyectox" optimistic-lock="version">
         <id name="gruCodigo" type="java.lang.Integer">
