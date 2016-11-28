@@ -459,7 +459,7 @@
                         <login-module code="Database" flag="required">
                             <module-option name="dsJndiName" value="java:jboss/datasources/MySQLDS"/>
                             <module-option name="principalsQuery" value="select password from users where username = ?"/>
-                            <module-option name="rolesQuery" value="select roleName,'Roles' from users_roles where username=?"/>
+                            <module-option name="rolesQuery" value="select roleName,'Roles' from usersroles where username=?"/>
                         </login-module>
                     </authentication>
                 </security-domain>
