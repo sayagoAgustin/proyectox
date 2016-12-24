@@ -16,7 +16,7 @@ public class Constants {
 //    public static String dbUser = "root";
 //    public static String dbPwd = "root";
 //    Online
-    public static String dbUrl = "jdbc:mysql://127.6.164.2:3306:3306/"+dbName;
+    public static String dbUrl = "jdbc:mysql://127.6.164.2:3306/"+dbName;
     public static String dbUser = "admin6t7glMh";
     public static String dbPwd = "7vDcEQQVM_2z";
 }
