@@ -1,5 +1,7 @@
-package com.prgguru.jersey;
+package com.proyectox.server;
  
+import com.prgguru.jersey.DBConnection;
+import com.prgguru.jersey.Utitlity;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -7,7 +9,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 //Path: http://localhost/<appln-folder-name>/login
 @Path("/login")
-public class Login {
+public class LoginCrudService {
     // HTTP Get Method
     @GET
     // Path: http://localhost/<appln-folder-name>/login/dologin

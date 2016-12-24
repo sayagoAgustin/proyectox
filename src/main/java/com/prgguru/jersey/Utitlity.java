@@ -1,7 +1,9 @@
 package com.prgguru.jersey;
  
-import org.codehaus.jettison.json.JSONException;
-import org.codehaus.jettison.json.JSONObject;
+import org.primefaces.json.JSONException;
+import org.primefaces.json.JSONObject;
+
+
  
 public class Utitlity{
     /**
